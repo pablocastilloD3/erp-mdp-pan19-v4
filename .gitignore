@@ -1,0 +1,6 @@
+# Archivos de configuración de clasp
+.clasp.json
+appsscript.json
+
+# Dependencias de Node.js
+/node_modules
