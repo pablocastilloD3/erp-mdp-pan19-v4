@@ -1,0 +1,76 @@
+<script>
+/**
+ * @file S_Modulo.html
+ * @module Módulo
+ * @version 1.0.0
+ */
+
+window.Ctrl_Recepcion = {
+  /**
+   * @section 1. ADN DEL MÓDULO (Metadata Reflection)
+   */
+  meta: {
+    id: 'recepcion',
+    version: '4.1.0',
+    titulo: 'Bóveda de Recepción Forense',
+    icono: 'bi-shield-check',
+    tematica: 'Abastecimiento',
+
+    // --- Seguridad Zero Trust ---
+    seguridad: {
+      permisos: ['recepcion', '*'],
+      nivel_acceso: 2,
+      requiere_ip: true,
+      trazabilidad: 'forense'
+    },
+
+    // --- Mapa de Infraestructura y Diccionario de Datos ---
+    infraestructura: {
+      // Definimos las tablas y las columnas que el código NECESITA para no romper
+      sheets: {
+        LIBRO_COMPRAS: [
+          'ID_UUID', 'FECHA_EMISION', 'RUT_EMISOR', 'FOLIO', 
+          'MONTO_TOTAL', 'IP_ADDRESS', 'ID_DRIVE_XML', 'HASH_RECORD'
+        ],
+        MAESTRO_PROVEEDORES: [
+          'RUT_PROVEEDOR', 'RAZON_SOCIAL', 'STATUS', 'RIESGO_ISO'
+        ],
+        MAESTRO_ITEMS: [
+          'SKU', 'NOMBRE_ITEM', 'STOCK_ACTUAL', 'ESTADO_CUARENTENA', 'ALERGENOS'
+        ]
+      },
+      drive_folders: {
+        xml_storage: 'DTE_RECIBIDOS_XML',
+        pdf_reports: 'REPORTES_RECEPCION_PDF'
+      }
+    },
+
+    // --- Parámetros Operativos (Editables desde Configuración) ---
+    parametros: {
+      max_batch_size: 50,
+      auto_crear_proveedor: true,
+      validar_firmas_sii: true,
+      estado_cuarentena_iso: 'BLOQUEADO_PCC01',
+      tolerancia_precios: 0.05 // 5% de aviso si el precio subió mucho
+    },
+
+    // --- Compliance Técnico-Legal ---
+    compliance: {
+      norma_sii: 'Ley 20.727 (Facturación Electrónica)',
+      norma_iso: 'ISO 22000 (PCC-01 Recepción de Materias Primas)'
+    }
+  },
+
+  /**
+   * @section 2. ESTADO OPERATIVO (RAM Local)
+   */
+  estado: {
+    batch_xml: [],        // Archivos leídos listos para procesar
+    previsualizacion: [], // Datos extraídos del XML antes de confirmar
+    bitacora_sesion: [],  // Log temporal del lote actual
+    enProceso: false
+  },
+
+  // ... (Siguen las funciones init, render, etc.)
+};
+</script>
