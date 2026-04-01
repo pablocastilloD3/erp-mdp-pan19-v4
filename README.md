@@ -13,6 +13,8 @@ El proyecto se rige por tres pilares fundamentales:
 
 ## 📁 Estructura del Núcleo (Base Files)
 
+> **Convención de nomenclatura**: los archivos de infraestructura nuclear (Core.js, Config.js, Scripts_Main.html, Index.html, Enrutamiento.html) operan sin prefijos, mientras que la arquitectura S_, V_, W_ queda reservada exclusivamente para el desarrollo de Módulos Operativos.
+
 Estos archivos constituyen la infraestructura crítica e inmutable del sistema:
 
 | Archivo | Función Principal |
