@@ -1,4 +1,4 @@
-# ERP MDP PAN19 - v5.0.0 "Eficiencia y Control"
+# ERP MDP PAN19 - v4.0.0 "Eficiencia y Control"
 
 Sistema **MES/ERP** de grado industrial diseñado para la gestión de manufactura, cumplimiento **ISO 22000** (Inocuidad Alimentaria) y normativa **SII Chile** (DTE), operando bajo una arquitectura **Zero Trust** y patrón de datos **Memory-First**.
 
